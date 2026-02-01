@@ -1,4 +1,4 @@
-require_relative '../fizzbuzz'
+require_relative '../fizzbuzz/lib/fizzbuzz'
 
 RSpec.describe Fizzbuzz do
   # subject に Fizzbuzz.new を割り当てることで、テスト内で subject が使えるようになります
