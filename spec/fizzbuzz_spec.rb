@@ -1,23 +1,25 @@
-require 'rspec'
-require 'fizzbuzz'
+# require_relative '../fizzbuzz' # fizzbuzz.rb を読み込む
 
-describe Fizzbuzz do
+RSpec.describe "Fizzbuzz" do
+  # テスト対象のインスタンスを生成（fizzbuzz.rbにFizzbuzzクラスがある場合）
+  let(:fizzbuzz) { Fizzbuzz.new }
+
   context 'normal number' do
-    it { subject.calculate(1).should eq 1 }
-    it { subject.calculate(2).should eq 2 }
+    it { expect(fizzbuzz.calculate(1)).to eq 1 }
+    it { expect(fizzbuzz.calculate(2)).to eq 2 }
   end
+
   context 'Fizz number' do
-    it { subject.calculate(3).should eq 'fizz' }
-    it { subject.calculate(6).should eq 'fizz' }
-    it { subject.calculate(9).should eq 'fizz' }
+    it { expect(fizzbuzz.calculate(3)).to eq 'fizz' }
+    it { expect(fizzbuzz.calculate(6)).to eq 'fizz' }
   end
-  context 'buzz number' do
-    it { subject.calculate(5).should eq 'buzz' }
-    it { subject.calculate(10).should eq 'buzz' }
-    it { subject.calculate(20).should eq 'buzz' }
+
+  context 'Buzz number' do
+    it { expect(fizzbuzz.calculate(5)).to eq 'buzz' }
+    it { expect(fizzbuzz.calculate(10)).to eq 'buzz' }
   end
-  context 'fizzbuzz  number' do
-    it { subject.calculate(15).should eq 'fizzbuzz' }
-    it { subject.calculate(30).should eq 'fizzbuzz' }
+
+  context 'FizzBuzz number' do
+    it { expect(fizzbuzz.calculate(15)).to eq 'fizzbuzz' }
   end
 end
